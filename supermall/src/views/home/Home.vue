@@ -1,10 +1,12 @@
 <template>
   <div id="home" class="wrapper">
-    <nav-bar class="home-nav">
-      <div slot="center">购物车</div>
-    </nav-bar>
+    <nav-bar class="home-nav"><div slot="center">购物街</div></nav-bar>
     <scroll class="content"
-            ref="scroll">
+            ref="scroll"
+            :probe-type="3"
+            @scroll="contentScroll"
+            :pull-up-load="true"
+            @pullingUp="loadMore">
       <home-swiper :banners="banners" @swiperImageLoad="swiperImageLoad"/>
     </scroll>
   </div>
@@ -39,6 +41,12 @@ export default {
       })
     },
     swiperImageLoad() {
+
+    },
+    contentScroll(position) {
+
+    }, 
+    loadMore() {
 
     }
   },
