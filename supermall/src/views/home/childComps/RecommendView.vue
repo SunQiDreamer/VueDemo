@@ -1,0 +1,44 @@
+<template>
+  <div class="recommend">
+    <div class="recommend-item" v-for="item in recommends">
+      <a :href="item.link">
+        <img :src="item.image" alt="">
+        <div>{{item.title}}</div>
+      </a>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "RecommendView",
+  props: {
+    recommends: {
+      type: Array,
+      default() {
+        return [];
+      }
+    }
+  }
+};
+</script>
+
+<style>
+.recommend {
+  /* background-color: red; */
+  width: 100%;
+  display: flex;
+  text-align: center;
+  font-size: 12px;
+}
+.recommend-item {
+  flex: 1;
+}
+
+.recommend-item img {
+  margin-top: 10px;
+  width: 70px;
+  height: 70px;
+  margin-bottom: 10px;
+}
+</style>
